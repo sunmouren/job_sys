@@ -13,8 +13,8 @@ class RecruitInfo(models.Model):
     company_region = models.CharField(max_length=10, verbose_name='区')
     company_address = models.CharField(max_length=10, verbose_name='详情地址')
     recruit_type = models.CharField(max_length=10, verbose_name='工种')
-    recruit_num = models.CharField(max_length=10, verbose_name='人数')
-    recruit_length = models.CharField(max_length=10, verbose_name='要求工龄')
+    recruit_num = models.PositiveIntegerField(default=0, verbose_name='人数')
+    recruit_length = models.PositiveIntegerField(default=0, verbose_name='要求工龄')
     recruit_other = models.CharField(max_length=64, blank=True, null=True, verbose_name='其他额外信息')
 
     class Meta:
@@ -36,7 +36,7 @@ class WorkerInfo(models.Model):
     address = models.CharField(max_length=64, verbose_name='详情地址')
     gender = models.CharField(max_length=2, verbose_name='性别')
     age = models.PositiveIntegerField(default=1, verbose_name='年龄')
-    work_length = models.CharField(max_length=5, verbose_name='工龄')
+    work_length = models.PositiveIntegerField(default=0, verbose_name='工龄')
     work_type = models.CharField(max_length=10, verbose_name='工种')
     work_other = models.CharField(max_length=64, blank=True, null=True, verbose_name='其他额外信息')
 

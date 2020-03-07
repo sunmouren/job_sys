@@ -82,6 +82,20 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'db_job_sys',        #数据库名字
+#         'USER': 'root',              #账号
+#         'PASSWORD': '12345678',      #密码
+#         'HOST': '127.0.0.1',         #IP
+#         'PORT': '3306',              #端口
+#         'OPTIONS': {
+#             'init_command': 'SET default_storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci;'
+#         },
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

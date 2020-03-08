@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'job_sys.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# 自带数据库，SQLite通常情况下用作一个中小型网站(日访问次数少于10万)的后台数据库是完全可以胜任的，请不用担心。
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,14 +83,15 @@ DATABASES = {
     }
 }
 
+# 若使用mysql可以将上面的给注释掉，把下面的取消注释，并填写对应的数据库名
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'db_job_sys',        #数据库名字
-#         'USER': 'root',              #账号
-#         'PASSWORD': '12345678',      #密码
-#         'HOST': '127.0.0.1',         #IP
-#         'PORT': '3306',              #端口
+#         'NAME': 'db_job_sys',        # 数据库名字
+#         'USER': 'root',              # 账号
+#         'PASSWORD': '12345678',      # 密码
+#         'HOST': '127.0.0.1',         # IP
+#         'PORT': '3306',              # 端口
 #         'OPTIONS': {
 #             'init_command': 'SET default_storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci;'
 #         },
@@ -139,5 +141,5 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 12
 }
